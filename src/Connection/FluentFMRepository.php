@@ -348,9 +348,10 @@ class FluentFMRepository extends BaseConnection implements FluentFM
             $this->has( 'id' );
         }
 
-        if( ! $this->with_deleted ) {
-            $this->whereEmpty( 'deleted_at' );
-        }
+        // remove the need for this attribute in the DB
+//        if( ! $this->with_deleted ) {
+//            $this->whereEmpty( 'deleted_at' );
+//        }
 
         try {
             $results = ( $this->callback )();
